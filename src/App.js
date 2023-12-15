@@ -6,10 +6,10 @@ import Navbar from './components/Navbar';
 import TextArea from './components/TextArea';
 import Alert from './components/Alert';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route,
-  HashRouter
+  
 } from "react-router-dom";
 
 
@@ -62,7 +62,6 @@ function App() {
   return (
     <>
       <Router>
-        <HashRouter basename='/'>
         <Navbar mode={mode} toggleMode={toggleMode} headLink="Home"/>
         <Alert alert={alert} />
         <div className="container my-4" >
@@ -71,7 +70,6 @@ function App() {
             <Route exact path="/" element={<TextArea showAlert={showAlert} mode={mode} heading="Enter text below" />} />
           </Routes>
         </div>
-        </HashRouter>
       </Router>
     </>
   );
